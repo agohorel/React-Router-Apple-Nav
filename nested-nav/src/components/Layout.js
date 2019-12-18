@@ -11,4 +11,11 @@ const LayoutContainer = styled.div`
   min-width: 100%;
   min-height: calc(100vh - ${measurements.navHeight});
   background-color: #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1, h3, p {
+      margin-top: 1rem;
+  }
 `;

@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const SubNav = () => {
+export const SubNav = ({ url }) => {
   return (
     <SubNavigation>
-      <NavLink to="/">Audio Demo</NavLink>
-      <NavLink to="/">Buy Now</NavLink>
+      <NavLink to={`${url}/demo`}>Audio Demo</NavLink>
+      <NavLink to={`${url}/purchase`}>Buy Now</NavLink>
     </SubNavigation>
   );
 };

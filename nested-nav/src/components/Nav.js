@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { SubNav } from "./SubNav";
-
 import measurements from "../measurements";
 
 export const Nav = ({ setCurrentInstrument, instruments }) => {
@@ -26,7 +24,6 @@ export const Nav = ({ setCurrentInstrument, instruments }) => {
           );
         })}
       </Navbar>
-      <SubNav></SubNav>
     </header>
   );
 };
