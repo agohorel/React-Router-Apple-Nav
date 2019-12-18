@@ -2,21 +2,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Nav = () => {
+import { SubNav } from "./SubNav";
+
+import measurements from "../measurements";
+
+export const Nav = ({ setCurrentInstrument, instruments }) => {
+  const handleProductLink = id => {
+    setCurrentInstrument(id);
+  };
+
   return (
     <header>
       <Navbar>
-        <NavLink>FunkoTron</NavLink>
-        <NavLink>JazzoMatic</NavLink>
-        <NavLink>BluesoTonic</NavLink>
+        {instruments.map(inst => {
+          return (
+            <NavLink
+              key={inst.id}
+              to={`/product/${inst.id}`}
+              onClick={() => handleProductLink(inst.id)}
+            >
+              {inst.name}
+            </NavLink>
+          );
+        })}
       </Navbar>
+      <SubNav></SubNav>
     </header>
   );
 };
 
 const Navbar = styled.nav`
   max-width: 100%;
-  height: 75px;
+  height: ${measurements.navHeight};
   display: flex;
   padding: 0 10rem;
   justify-content: space-between;

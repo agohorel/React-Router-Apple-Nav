@@ -1,11 +1,21 @@
-import React from 'react'
-
-import { SubNav } from "./SubNav";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const SubNav = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <SubNavigation>
+      <NavLink to="/">Audio Demo</NavLink>
+      <NavLink to="/">Buy Now</NavLink>
+    </SubNavigation>
+  );
+};
+
+const SubNavigation = styled.nav`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6c6c6c;
+  padding: 1rem 10rem;
+`;
